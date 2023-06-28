@@ -13,7 +13,7 @@ const dentistReducer = (state, action) => {
     switch(action.type){
         case 'GET_LIST':
             return {dentistList: action.payload, dentist: state.dentist}
-        case 'GET_POKE':
+        case 'GET_DENTIST':
             return {dentistList: state.dentistList, dentist: action.payload}
         default: 
             throw new Error()
@@ -22,11 +22,11 @@ const dentistReducer = (state, action) => {
 
 const Context = ({children}) => {
     const [dentistState, dentistDispatch] = useReducer(dentistReducer, InitialDentistState)
-    const urlList = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0'
+    const urlList = 'https://jsonplaceholder.typicode.com/users'
 
     useEffect(() => {
         axios(urlList)
-        .then(res => dentistDispatch({type: 'GET_LIST', payload: res.data.results}))
+        .then(res => dentistDispatch({type: 'GET_LIST', payload: res.data}))
         .catch(err => console.log(err))
     }, [])
 
