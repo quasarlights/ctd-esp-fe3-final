@@ -1,16 +1,24 @@
 import React from 'react'
-import Form from '../Components/Form'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import Form from "../Components/Form";
+import { useDentistStates } from '../Context';
 
 const Contact = () => {
-  return (
-    <div>
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
-      <Form/>
-    </div>
-  )
-}
 
-export default Contact
+  const {dentistState}= useDentistStates()
+
+  const theme = dentistState.theme === "dark" ? "dark" : "light";
+
+  return (
+    <main className={theme}>
+      <div>
+        <h2 style={{ textAlign: "center" }}>Necesita mas informacion?</h2>
+        <p style={{ textAlign: "center" }}>
+          Envie sus preguntas y le contestaremos
+        </p>
+        <Form />
+      </div>
+    </main>
+  );
+};
+
+export default Contact;

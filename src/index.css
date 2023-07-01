@@ -25,11 +25,13 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 1rem;
+  background-color:crimson;
 }
-
+.logo{
+  width: 160px;
+}
 a{
   color: #000;
   text-decoration: none;
@@ -42,19 +44,19 @@ a:hover{
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  background-color:crimson;
+
 }
 
 footer > img{
   width: 200px;
   margin: 0;
+  
 }
 footer > p{
   margin: 0;
@@ -88,7 +90,6 @@ form{
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-  width: 90vw;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -119,4 +120,36 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+.imagen {
+  border: 3px solid #5e5043;
+  width: 80%;
+  max-height: 200px;
+  object-fit: cover;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.redes{
+  background-color: #000000;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  width: 30px;
+}
+
+.success-message{
+  margin-top: 10px;
+  color: #0c7902;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.myButton {
+  font-size: 2rem;  /* Aumenta el tamaño de la fuente, lo que aumentará el tamaño del icono */
+  padding: 10px 20px; /* Aumenta el espacio alrededor del texto/icono dentro del botón */
 }
